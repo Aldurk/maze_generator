@@ -1,4 +1,4 @@
-# maze_generator
+# Generador de laberintos
 
 ## MazeGeneratorDFS
  
