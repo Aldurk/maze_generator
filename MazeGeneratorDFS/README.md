@@ -6,12 +6,12 @@ Contiene lo siguiente:
 
 ## include/Maze.h
 
-La cabezera de la clase.
+La cabecera de la clase.
 
 ## source/Maze.cpp
 
-La implementacion de la misma.
+La implementación de la misma.
 
 ## main.cpp
 
-Un ejemplo de como generar el laberinto y mostrarlo utilizando la libreria SMFL.
+Un ejemplo de como generar el laberinto y mostrarlo utilizando la librería SMFL.
