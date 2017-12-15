@@ -8,7 +8,7 @@
 
     Generador de laberintos aleatorios utilizando el algoritmo DFS.
 
-    Para cualquier duda o sugerencia: @aldurk (Twitter)
+    Para cualquier duda o sugerencia: @_aldurk (Twitter)
 
 ********************************************************************/
 
