@@ -3,6 +3,16 @@
 #include <stdio.h>
 #include <time.h>
 
+
+/*******************************************************************
+
+    Generador de laberintos aleatorios utilizando el algoritmo DFS.
+
+    Para cualquier duda o sugerencia: @aldurk (Twitter)
+
+********************************************************************/
+
+
 /**
     Constructor
 
@@ -88,8 +98,8 @@ NODE* Maze::getParent(int n)
 }
 
 /**
-    Comienza la creación del laberinto, iniciando los nodos y
-    llamando a la función recursiva makeMaze(Node *n)
+    Comienza la creacion del laberinto, iniciando los nodos y
+    llamando a la funcion recursiva makeMaze(Node *n)
 **/
 void Maze::makeMaze()
 {
@@ -99,11 +109,10 @@ void Maze::makeMaze()
 
 /**
     Crea el laberinto desde el nodo recibido.
-    Empieza marcándolo, para qué cuando otro nodo
-    intente procesarlo se de cuenta de que ya lo está.
+    Empieza marcandolo, es decir, el nodo ya esta procesado.
 
     Lo siguiente que hace es guardar las direcciones posibles
-    a las que puede ir con la función saveNeightbours(int n).
+    a las que puede ir con la funcion saveNeightbours(int n).
 
     Finalmente, comprueba todos los nodos adyacentes a los que puede ir:
 
@@ -175,10 +184,10 @@ int Maze::up(int n, int *i)
         n, un entero con el numero de nodo a tratar.
         (PRE: esta en el array de nodos)
 
-        *i, un puntero a un entero para la posición
+        *i, un puntero a un entero para la posicion
             del nodo adyacente de abajo del nodo recibido.
 
-    OUT: 1 -> Esa posición existe.
+    OUT: 1 -> Esa posicion existe.
          0 -> c.c.
 **/
 int Maze::down(int n, int *i)
@@ -197,10 +206,10 @@ int Maze::down(int n, int *i)
         n, un entero con el numero de nodo a tratar.
         (PRE: esta en el array de nodos)
 
-        *i, un puntero a un entero para la posición
+        *i, un puntero a un entero para la posicion
             del nodo adyacente de la derecha del nodo recibido.
 
-    OUT: 1 -> Esa posición existe.
+    OUT: 1 -> Esa posicion existe.
          0 -> c.c.
 **/
 int Maze::right(int n, int *i)
@@ -219,10 +228,10 @@ int Maze::right(int n, int *i)
         n, un entero con el numero de nodo a tratar.
         (PRE: esta en el array de nodos)
 
-        *i, un puntero a un entero para la posición
+        *i, un puntero a un entero para la posicion
             del nodo adyacente de la izquierda del nodo recibido.
 
-    OUT: 1 -> Esa posición existe.
+    OUT: 1 -> Esa posicion existe.
          0 -> c.c.
 **/
 int Maze::left(int n, int *i)
@@ -249,29 +258,25 @@ void Maze::saveNeighbours(int n)
     int i;
     NODE* node = &nodes[n];
 
-    int s = up(n, &i);
-    if(s && nodes[i].state == WALL)
+    if(up(n, &i) && nodes[i].state == WALL)
     {
         node->dirs[node->numDirs] = UP;
         node->numDirs++;
     }
 
-    s = down(n, &i);
-    if(s && nodes[i].state == WALL)
+    if(down(n, &i) && nodes[i].state == WALL)
     {
         node->dirs[node->numDirs] = DOWN;
         node->numDirs++;
     }
 
-    s = right(n, &i);
-    if(s && nodes[i].state == WALL)
+    if(right(n, &i) && nodes[i].state == WALL)
     {
         node->dirs[node->numDirs] = RIGHT;
         node->numDirs++;
     }
 
-    s = left(n, &i);
-    if(s && nodes[i].state == WALL)
+    if(left(n, &i) && nodes[i].state == WALL)
     {
         node->dirs[node->numDirs] = LEFT;
         node->numDirs++;

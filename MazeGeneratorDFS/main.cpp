@@ -10,7 +10,6 @@ int tamY = 100;
 
 ***************************************************************************/
 
-
 /**
     Muestra el laberinto
 **/
@@ -46,8 +45,6 @@ void showMaze(Maze* l, sf::RenderWindow *window)
             window->draw(rectangle);
         }
 	 }
-
-     printf("\n");
     }
 }
 

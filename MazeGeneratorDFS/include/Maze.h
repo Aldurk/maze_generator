@@ -1,8 +1,18 @@
 #ifndef Maze_H
 #define Maze_H
 
+/*******************************************************************
+
+    Generador de laberintos aleatorios utilizando el algoritmo DFS.
+
+    Para cualquier duda o sugerencia: @aldurk (Twitter)
+
+********************************************************************/
+
+
 enum DIRECTION { UP, DOWN, RIGHT, LEFT };
 enum STATE { WALL, MARKED };
+
 
 /**
     Nodos de un grafo, en el contexto del laberinto, son una parte del camino.
